@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+    android:background="@drawable/backgroud"
+    tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8px"
+        android:layout_marginBottom="15px"
+        android:padding="5px">
+
+        <TextView
+            android:id="@+id/currentDayTextView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="03月12日"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="32dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/currentYearTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2020年"/>
+            
+            <TextView
+                android:id="@+id/currentLunarTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="十四"/>
+        
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/currentDayImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/today" />
+
+            <ImageView
+                android:id="@+id/monthImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/calendar"/>
+
+            <ImageView
+                android:id="@+id/setup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/setup"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.haibin.calendarview.CalendarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:month_view="com.example.androiddairynew.view.DairyMonthView"
+            app:month_view_show_mode="mode_only_current"
+            app:week_view="com.example.androiddairynew.view.DairyWeekView" />
+
+    </com.haibin.calendarview.CalendarLayout>
+
+</LinearLayout>
